@@ -4,18 +4,18 @@ module top_level (
 	// Clock
 	input CLOCK_50,
 	// Keys
-	input [0:0] KEY,
+	input [1:0] KEY,
 	// Leds
 	output [9:0] LEDR,
 	// Switches
 	input [9:0] SW
 );
-
+	
     nios_system u0 (
         .clk_clk       (CLOCK_50),       
         .reset_reset_n (KEY[0]), 
-        .ledr_export   (LEDR[9:0]),   
-        .sw_export     (SW[9:0])      
+        .ledr_export   (LEDR),   
+        .sw_export     (SW)      
     );
 
 	 
